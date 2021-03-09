@@ -1,1 +1,1 @@
-  print(arr_time[1])
+w_minutes = (duration_minutes+start_minutes) - 60 #(75) -60 =
