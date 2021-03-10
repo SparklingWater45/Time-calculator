@@ -78,26 +78,52 @@ def add_time(start, duration,day = 0):
                     outputday_index += 1
                 
             if day_count == 1: #1 day passed
-                return '{} (next day)'.format((arr_days[outputday_index]).capitalize())
+                return ', {} (next day)'.format((arr_days[outputday_index]).capitalize())
             elif(day_count == 0): #same day
                 return ', {}'.format((arr_days[outputday_index]).capitalize())
             else: #more than 1 day
-                return '({} {} days later)'.format((arr_days[outputday_index]).capitalize(), day_count)
+                return ', {} ({} days later)'.format((arr_days[outputday_index]).capitalize(), day_count)
         
         else:
             if day_count == 1:
-                return '(next day)'
+                return ' (next day)'
             elif(day_count == 0):
                 return ''
             else:
-                return ('{} days later').format(day_count)
+                return (' ({} days later)').format(day_count)
 
     #put 0 infront of minutes if single digit
     if len(new_minutes) == 1 :
         new_minutes = '0' + new_minutes
 
-    output = str(new_hours) + ':' + new_minutes + ' ' + start_ampm + ' ' + days_after()
-    print(output)
+    output = str(new_hours) + ':' + new_minutes + ' ' + start_ampm + days_after()
+    #print(output)
     return output
 
-   
+# add_time("3:30 PM", "2:12")
+# # expected = "5:42 PM"
+
+# add_time("11:55 AM", "3:12")
+# # expected = "3:07 PM"
+
+# add_time("9:15 PM", "27:30")
+# # expected = "2:45 AM (next day)"
+
+# add_time("11:40 AM", "0:25")
+# # expected = "12:05 PM"
+
+# add_time("2:59 AM", "24:00")
+# # expected = "2:59 AM (next day)"
+
+# add_time("11:59 PM", "24:05")
+# # expected = "12:04 AM (2 days later)"
+
+# add_time("8:16 PM", "466:02")
+# expected = "6:18 AM (20 days later)"
+    
+
+# add_time("5:01 AM", "0:00")
+# # expected = "5:01 AM"
+
+# add_time("3:30 PM", "2:12", "Monday")
+# # expected = "5:42 PM, Monday"
