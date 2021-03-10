@@ -104,17 +104,23 @@ def add_time(start, duration,day = 0):
         new_minutes = '0' + new_minutes
 
     if day != 0:
-        pass
+        #day_value = day.lower()
+        day_index = arr_days.index(day.lower())
+        print(day_index)
+        
+        for days in range(day_count):
+            pass
+
+    else:
+        output = str(new_hours) + ':' + new_minutes + ' ' + start_ampm + ' ' + days_after()
+        print(output)
+        return output
+
+   
+    
 
 
-
-    output = str(new_hours) + ':' + new_minutes + ' ' + start_ampm + ' ' + days_after()
-
-    print(output)
-    return output
-
-
-add_time("3:30 PM", "2:12")
+add_time("3:30 PM", "2:12",'monday')
 #expected = "5:42 PM"
 
   

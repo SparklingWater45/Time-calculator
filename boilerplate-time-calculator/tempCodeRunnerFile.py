@@ -1,2 +1,3 @@
-
-            new_minutes = (duration_minutes+start_minutes) - 60 #(75) -60 = 15 mins left
+  # if day != 0:
+    #     day_value = day.lower()
+    #     print(day_value)
